@@ -33,27 +33,27 @@ Muted light（柔和的 亮色）
 compile 'com.android.support:palette-v7:21.0.0'
 * 第一步，我们需要通过一个Bitmap对象来生成一个对应的Palette对象。 Palette 提供了四个静态方法用来生成对象。
 ```
-Palette generate(Bitmap bitmap)
-Palette generate(Bitmap bitmap, int numColors)
-generateAsync(Bitmap bitmap, PaletteAsyncListener listener)
+Palette generate(Bitmap bitmap)   
+Palette generate(Bitmap bitmap, int numColors)   
+generateAsync(Bitmap bitmap, PaletteAsyncListener listener)   
 generateAsync(Bitmap bitmap, int numColors, final PaletteAsyncListener listener)
 ```
 不难看出，生成方法分为generate(同步)和generateAsync(异步)两种，如果图片过大使用generate方法，可能会阻塞主线程，我们更倾向于使用generateAsync的方法，其实内部就是创建了一个AsyncTask。generateAsync方法需要一个PaletteAsyncListener对象用于监听生成完毕的回调。除了必须的Bitmap参数外，还可以传入一个numColors参数指定颜色数，默认是 16。
 * 第二步，得到Palette对象后，就可以拿到提取到的颜色值
 ```
-Palette.getVibrantSwatch()
-Palette.getDarkVibrantSwatch()
-Palette.getLightVibrantSwatch()
-Palette.getMutedSwatch()
-Palette.getDarkMutedSwatch()
-Palette.getLightMutedSwatch()
+Palette.getVibrantSwatch()   
+Palette.getDarkVibrantSwatch()   
+Palette.getLightVibrantSwatch()   
+Palette.getMutedSwatch()   
+Palette.getDarkMutedSwatch()   
+Palette.getLightMutedSwatch()   
 ```
 * 第三步，使用颜色，上面get方法中返回的是一个 Swatch 样本对象，这个样本对象是Palette的一个内部类，它提供了一些获取最终颜色的方法。
 ```
-getPopulation(): 样本中的像素数量
-getRgb(): 颜色的RBG值
-getHsl(): 颜色的HSL值
-getBodyTextColor(): 主体文字的颜色值
+getPopulation(): 样本中的像素数量   
+getRgb(): 颜色的RBG值   
+getHsl(): 颜色的HSL值   
+getBodyTextColor(): 主体文字的颜色值   
 getTitleTextColor(): 标题文字的颜色值
 ```
 通过 getRgb() 可以得到最终的颜色值并应用到UI中。getBodyTextColor() 和 getTitleTextColor() 可以得到此颜色下文字适合的颜色，这样很方便我们设置文字的颜色，使文字看起来更加舒服。
@@ -127,3 +127,23 @@ Pre-requisites
 - Android SDK v22
 - Android Build Tools v22.0.1
 - Android Support Repository r16 (for v22.2.1)
+
+License
+-------
+
+Copyright 2014 The Android Open Source Project, Inc.
+
+Licensed to the Apache Software Foundation (ASF) under one or more contributor
+license agreements.  See the NOTICE file distributed with this work for
+additional information regarding copyright ownership.  The ASF licenses this
+file to you under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License.  You may obtain a copy of
+the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+License for the specific language governing permissions and limitations under
+the License.

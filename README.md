@@ -33,9 +33,9 @@ Muted light（柔和的 亮色）
 compile 'com.android.support:palette-v7:21.0.0'
 * 第一步，我们需要通过一个Bitmap对象来生成一个对应的Palette对象。 Palette 提供了四个静态方法用来生成对象。
 ```
-Palette generate(Bitmap bitmap)   
-Palette generate(Bitmap bitmap, int numColors)   
-generateAsync(Bitmap bitmap, PaletteAsyncListener listener)   
+Palette generate(Bitmap bitmap)
+Palette generate(Bitmap bitmap, int numColors)
+generateAsync(Bitmap bitmap, PaletteAsyncListener listener)
 generateAsync(Bitmap bitmap, int numColors, final PaletteAsyncListener listener)
 ```
 不难看出，生成方法分为generate(同步)和generateAsync(异步)两种，如果图片过大使用generate方法，可能会阻塞主线程，我们更倾向于使用generateAsync的方法，其实内部就是创建了一个AsyncTask。generateAsync方法需要一个PaletteAsyncListener对象用于监听生成完毕的回调。除了必须的Bitmap参数外，还可以传入一个numColors参数指定颜色数，默认是 16。

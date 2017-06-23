@@ -35,9 +35,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import com.pgyersdk.update.PgyUpdateManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        if (!BuildConfig.DEBUG) {
+            PgyUpdateManager.register(this, "");
+        }
     }
 
     @Override
@@ -146,6 +149,12 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new CheeseListFragment(), "Category 1");
         adapter.addFragment(new CheeseListFragment(), "Category 2");
         adapter.addFragment(new CheeseListFragment(), "Category 3");
+        adapter.addFragment(new CheeseListFragment(), "Category 4");
+        adapter.addFragment(new CheeseListFragment(), "Category 5");
+        adapter.addFragment(new CheeseListFragment(), "Category 6");
+        adapter.addFragment(new CheeseListFragment(), "Category 7");
+        adapter.addFragment(new CheeseListFragment(), "Category 8");
+        adapter.addFragment(new CheeseListFragment(), "Category 9");
         viewPager.setAdapter(adapter);
     }
 

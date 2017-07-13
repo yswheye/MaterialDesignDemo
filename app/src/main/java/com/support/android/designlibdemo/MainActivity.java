@@ -16,6 +16,7 @@
 
 package com.support.android.designlibdemo;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -163,8 +164,9 @@ public class MainActivity extends AppCompatActivity {
                 new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                menuItem.setChecked(true);
+                // menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
+                startActivity(new Intent(MainActivity.this, ToolbarActivity.class));
                 return true;
             }
         });

@@ -97,7 +97,7 @@ AppBarLayout的子布局有5种滚动标识(就是上面代码CollapsingToolbarL
 * exitUntilCollapsed：当你定义了一个minHeight，此布局将在滚动到达这个最小高度的时候折叠。
 * snap:当一个滚动事件结束，如果视图是部分可见的，那么它将被滚动到收缩或展开。例如，如果视图只有底部25%显示，它将折叠。相反，如果它的底部75%可见，那么它将完全展开。
 
-###CollapsingToolbarLayout
+###CollapsingToolbarLayout 可伸缩折叠的Toolbar
 CollapsingToolbarLayout属性
 可以通过app:contentScrim设置折叠时工具栏布局的颜色，
 通过app:statusBarScrim设置折叠时状态栏的颜色。

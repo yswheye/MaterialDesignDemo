@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         if (!BuildConfig.DEBUG) {
-            PgyUpdateManager.register(this, "");
+            PgyUpdateManager.register(this, "com.materialdemo.authority.fileprovider");
         }
 
         PermissionUtil.verifyAllPermissions(this);

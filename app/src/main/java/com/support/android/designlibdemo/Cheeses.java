@@ -38,6 +38,28 @@ public class Cheeses {
         }
     }
 
+    public static String getRandomCheeseUrl() {
+        switch (RANDOM.nextInt(8)) {
+            default:
+            case 0:
+                return "http://img.zcool.cn/community/01d01359659529a8012193a35c5160.jpg@1280w_1l_2o_100sh.jpg";
+            case 1:
+                return "http://img.zcool.cn/community/0170645965944fa8012193a3d1caa0.jpg@1280w_1l_2o_100sh.jpg";
+            case 2:
+                return "http://img.zcool.cn/community/01d94959659494a8012193a34389c3.jpg@1280w_1l_2o_100sh.jpg";
+            case 3:
+                return "http://img.zcool.cn/community/0179c8596594b1a8012193a3024b32.jpg@1280w_1l_2o_100sh.jpg";
+            case 4:
+                return "http://img.zcool.cn/community/01bbf7596594bda8012193a3853d8f.jpg@1280w_1l_2o_100sh.jpg";
+            case 5:
+                return "http://img.zcool.cn/community/01256459659531a8012193a37ec331.jpg";
+            case 6:
+                return "http://img.zcool.cn/community/011e0859659482a8012193a3968afc.png";
+            case 7:
+                return "http://img.zcool.cn/community/01b11b55492fff0000019ae97d3a35.jpg@1280w_1l_2o_100sh.jpg";
+        }
+    }
+
     public static final String[] sCheeseStrings = {
             "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
             "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale",

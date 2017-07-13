@@ -17,4 +17,6 @@ build/
 .idea
 *.iml
 
+apks/
+
 *.apk

@@ -18,24 +18,30 @@ package com.support.android.designlibdemo;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.support.android.designlibdemo.utils.PaletteUtil;
 
 public class CheeseDetailActivity extends AppCompatActivity {
     public static final String EXTRA_NAME = "cheese_name";
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,7 @@ public class CheeseDetailActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+        floatingActionButton = findViewById(R.id.fab);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -58,8 +65,7 @@ public class CheeseDetailActivity extends AppCompatActivity {
 
     private void loadBackdrop() {
         final ImageView imageView = findViewById(R.id.backdrop);
-        Glide.with(this).load(Cheeses.getRandomCheeseDrawable()).centerCrop().into(imageView);
-        Glide.with(this).load(Cheeses.getRandomCheeseDrawable()).asBitmap().centerCrop().into(new SimpleTarget<Bitmap>() {
+        Glide.with(this).load(Cheeses.getRandomCheeseUrl()).asBitmap().centerCrop().into(new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                 imageView.setImageBitmap(resource);
@@ -78,7 +84,7 @@ public class CheeseDetailActivity extends AppCompatActivity {
      * 界面颜色的更改
      */
     @SuppressLint("NewApi")
-    private void colorChange(Bitmap bitmap) {
+    private void colorChange(final Bitmap bitmap) {
         // Palette的部分
         Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
             /**
@@ -88,33 +94,35 @@ public class CheeseDetailActivity extends AppCompatActivity {
             public void onGenerated(Palette palette) {
                 Palette.Swatch vibrant = palette.getDarkVibrantSwatch();
                 if (vibrant == null) {
+                    Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
+                        /**
+                         * 提取完之后的回调方法
+                         */
+                        @Override
+                        public void onGenerated(Palette palette) {
+                            Palette.Swatch vibrant = palette.getDarkMutedSwatch();
+                            if (vibrant == null) {
+                                return;
+                            }
+
+                            changeUI(vibrant.getRgb());
+                        }
+                    });
                     return;
                 }
 
-                collapsingToolbarLayout.setContentScrimColor(vibrant.getRgb());
-                collapsingToolbarLayout.setStatusBarScrimColor(vibrant.getRgb());
+                changeUI(vibrant.getRgb());
             }
         });
     }
 
-    /**
-     * 颜色加深处理
-     *
-     * @param RGBValues RGB的值，由alpha（透明度）、red（红）、green（绿）、blue（蓝）构成，
-     *                  Android中我们一般使用它的16进制，
-     *                  例如："#FFAABBCC",最左边到最右每两个字母就是代表alpha（透明度）、
-     *                  red（红）、green（绿）、blue（蓝）。每种颜色值占一个字节(8位)，值域0~255
-     *                  所以下面使用移位的方法可以得到每种颜色的值，然后每种颜色值减小一下，在合成RGB颜色，颜色就会看起来深一些了
-     * @return
-     */
-    private int colorBurn(int RGBValues) {
-        int alpha = RGBValues >> 24;
-        int red = RGBValues >> 16 & 0xFF;
-        int green = RGBValues >> 8 & 0xFF;
-        int blue = RGBValues & 0xFF;
-        red = (int) Math.floor(red * (1 - 0.1));
-        green = (int) Math.floor(green * (1 - 0.1));
-        blue = (int) Math.floor(blue * (1 - 0.1));
-        return Color.rgb(red, green, blue);
+    private void changeUI(int color) {
+        collapsingToolbarLayout.setContentScrimColor(PaletteUtil.colorBurn(color));
+        collapsingToolbarLayout.setStatusBarScrimColor(PaletteUtil.colorBurn(color));
+        floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(PaletteUtil.colorBurn(color)));
+        Animation animation = AnimationUtils.loadAnimation(CheeseDetailActivity.this, R.anim.fab_in);
+        floatingActionButton.startAnimation(animation);
+        floatingActionButton.setVisibility(View.VISIBLE);
     }
+
 }

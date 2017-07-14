@@ -86,31 +86,17 @@ public class CheeseDetailActivity extends AppCompatActivity {
     @SuppressLint("NewApi")
     private void colorChange(final Bitmap bitmap) {
         // Palette的部分
-        Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
-            /**
-             * 提取完之后的回调方法
-             */
+        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
-                Palette.Swatch vibrant = palette.getDarkVibrantSwatch();
+                Palette.Swatch vibrant = palette.getVibrantSwatch();
                 if (vibrant == null) {
-                    Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
-                        /**
-                         * 提取完之后的回调方法
-                         */
-                        @Override
-                        public void onGenerated(Palette palette) {
-                            Palette.Swatch vibrant = palette.getDarkMutedSwatch();
-                            if (vibrant == null) {
-                                return;
-                            }
-
-                            changeUI(vibrant.getRgb());
-                        }
-                    });
-                    return;
+                    vibrant = palette.getMutedSwatch();
                 }
 
+                if (vibrant == null) {
+                    return;
+                }
                 changeUI(vibrant.getRgb());
             }
         });

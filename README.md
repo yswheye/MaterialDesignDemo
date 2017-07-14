@@ -10,7 +10,7 @@ Material Design
 - NestedScrollView
 - CoordinatorLayout //协调(Coordinate)其他组件, 实现联动
 
-###CardView
+### CardView
 1. cardElevation:设置阴影的大小
 2. cardBackgroundColor:卡片布局的背景演示
 3. cardCornerRadius：卡片布局的圆角的大小
@@ -19,7 +19,7 @@ Material Design
 Android:foreground="?android:attr/selectableItemBackground"
 设置点击的水波纹效果
 
-###Palette 调色板
+### Palette 调色板
 **Palette可以提取的颜色如下**:   
 Vibrant （有活力的）
 Vibrant dark（有活力的 暗色）
@@ -88,7 +88,7 @@ Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
         // 根据需求选择不同效果的颜色应用
     });
 ```
-###AppBarLayout
+### AppBarLayout
 **app:layout_scrollFlags**
 AppBarLayout的子布局有5种滚动标识(就是上面代码CollapsingToolbarLayout中配置的app:layout_scrollFlags属性)：
 * scroll:将此布局和滚动时间关联。这个标识要设置在其他标识之前，没有这个标识则布局不会滚动且其他标识设置无效。
@@ -97,7 +97,7 @@ AppBarLayout的子布局有5种滚动标识(就是上面代码CollapsingToolbarL
 * exitUntilCollapsed：当你定义了一个minHeight，此布局将在滚动到达这个最小高度的时候折叠。
 * snap:当一个滚动事件结束，如果视图是部分可见的，那么它将被滚动到收缩或展开。例如，如果视图只有底部25%显示，它将折叠。相反，如果它的底部75%可见，那么它将完全展开。
 
-###CollapsingToolbarLayout 可伸缩折叠的Toolbar
+### CollapsingToolbarLayout 可伸缩折叠的Toolbar
 CollapsingToolbarLayout属性
 可以通过app:contentScrim设置折叠时工具栏布局的颜色，
 通过app:statusBarScrim设置折叠时状态栏的颜色。
@@ -110,7 +110,7 @@ CollapsingToolbarLayout的子布局有3种折叠模式（Toolbar中设置的app:
 * parallax：CollapsingToolbarLayout折叠时，此布局也会有视差折叠效果。
 当CollapsingToolbarLayout的子布局设置了parallax模式时，我们还可以通过app:layout_collapseParallaxMultiplier设置视差滚动因子，值为：0~1。
 
-###CoordinatorLayout
+### CoordinatorLayout
 协调(Coordinate)其他组件, 实现联动。
 通常和AppBarLayout一起使用。
 

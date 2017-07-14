@@ -125,6 +125,8 @@ CollapsingToolbarLayout的子布局有3种折叠模式（Toolbar中设置的app:
 ------------------------------------------
 
 
+![](http://ww1.sinaimg.cn/mw690/628a632agy1fhj7ktx3slj20k00zkdjt.jpg)
+
 
 Pre-requisites
 --------------

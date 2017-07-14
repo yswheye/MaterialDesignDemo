@@ -3,11 +3,13 @@ Material Design
 - FloatingActionButton //浮动操作按钮
 - NavigationView //侧边导航栏
 - Snackbar //提示条，类似toast
+- TextInputLayout // 主要作为EditText的容器
 - Palette //调色板
 - CardView //卡片视图
 - AppBarLayout //配合Toolbar，跟随滚动
 - CollapsingToolbarLayout //配合Toolbar，可伸缩的Toolbar布局
 - NestedScrollView
+- NavigationView // 侧边导航抽屉
 - CoordinatorLayout //协调(Coordinate)其他组件, 实现联动
 
 More

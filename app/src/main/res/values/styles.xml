@@ -25,6 +25,11 @@
         <item name="colorPrimaryDark">#673AB7</item>
         <item name="colorAccent">#FF4081</item>
     </style>
+    <style name="Theme.Login" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#63B931</item>
+        <item name="colorPrimaryDark">#63B931</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
 
     <style name="Widget.CardContent" parent="android:Widget">
         <item name="android:paddingLeft">16dp</item>

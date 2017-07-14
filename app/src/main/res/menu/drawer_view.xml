@@ -22,13 +22,13 @@
             android:icon="@drawable/ic_dashboard"
             android:title="Home" />
         <item
-            android:id="@+id/nav_messages"
+            android:id="@+id/nav_toolbar"
             android:icon="@drawable/ic_event"
-            android:title="Messages" />
+            android:title="Toolbar" />
         <item
-            android:id="@+id/nav_friends"
+            android:id="@+id/nav_textinput"
             android:icon="@drawable/ic_headset"
-            android:title="Friends" />
+            android:title="TextInputLayout" />
         <item
             android:id="@+id/nav_discussion"
             android:icon="@drawable/ic_forum"

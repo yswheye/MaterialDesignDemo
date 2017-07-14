@@ -162,13 +162,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                // menuItem.setChecked(true);
+                //menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
-                startActivity(new Intent(MainActivity.this, ToolbarActivity.class));
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_toolbar:
+                        startActivity(new Intent(MainActivity.this, ToolbarActivity.class));
+                        break;
+                    case R.id.nav_textinput:
+                        startActivity(new Intent(MainActivity.this, TextInputActivity.class));
+                        break;
+                }
                 return true;
             }
         });

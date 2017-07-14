@@ -38,6 +38,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.pgyersdk.update.PgyUpdateManager;
+import com.support.android.designlibdemo.utils.PermissionUtil;
 
 import java.util.ArrayList;
 import java.util.List;

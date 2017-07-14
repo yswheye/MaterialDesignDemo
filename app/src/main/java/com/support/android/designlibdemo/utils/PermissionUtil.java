@@ -1,4 +1,4 @@
-package com.support.android.designlibdemo;
+package com.support.android.designlibdemo.utils;
 
 /*
 * Copyright 2015 The Android Open Source Project

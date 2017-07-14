@@ -36,6 +36,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.support.android.designlibdemo.utils.PaletteUtil;
+import com.support.android.designlibdemo.utils.StatusBarUtils;
 
 public class CheeseDetailActivity extends AppCompatActivity {
     public static final String EXTRA_NAME = "cheese_name";
@@ -52,6 +53,7 @@ public class CheeseDetailActivity extends AppCompatActivity {
         final String cheeseName = intent.getStringExtra(EXTRA_NAME);
 
         toolbar = findViewById(R.id.toolbar);
+        StatusBarUtils.setTranslucentImageHeader(this, 0, toolbar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         floatingActionButton = findViewById(R.id.fab);
         setSupportActionBar(toolbar);

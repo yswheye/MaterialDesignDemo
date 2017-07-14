@@ -31,7 +31,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.DesignDemo">
+        android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -51,8 +51,7 @@
         </activity>
 
         <activity
-            android:name=".ToolbarActivity"
-            android:theme="@style/Base.Theme.DesignDemo"/>
+            android:name=".ToolbarActivity"/>
         <activity
             android:name=".TextInputActivity"
             android:theme="@style/Theme.Login"

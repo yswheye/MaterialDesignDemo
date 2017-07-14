@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#63B931"
+              android:background="#673AB7"
               android:orientation="vertical"
               android:padding="20dp">
 
@@ -17,7 +18,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="Welcome"
-            android:textColor="#333333"
+            android:textColor="@android:color/white"
             android:textSize="30sp"/>
 
     </RelativeLayout>
@@ -32,9 +33,10 @@
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/psd_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            app:counterOverflowTextAppearance="@style/TextOverCount">
 
             <EditText
                 android:id="@+id/username"
@@ -49,7 +51,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:focusable="true">
+            app:passwordToggleDrawable="@drawable/ic_eye_grey_24dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTintMode="src_in"
+            app:passwordToggleTint="#63B931">
 
             <EditText
                 android:id="@+id/userpsd"

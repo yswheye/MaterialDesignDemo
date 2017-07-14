@@ -12,8 +12,10 @@ Material Design
 - NavigationView // 侧边导航抽屉
 - CoordinatorLayout //协调(Coordinate)其他组件, 实现联动
 
-More
+More 待完成
 =====================================   
+- BottomSheetDialog // 底部抽屉dialog
+- BottomNavigationView // 底部导航tab
 
 ### CardView
 1. cardElevation:设置阴影的大小

@@ -20,11 +20,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">#673AB7</item>
         <item name="colorPrimaryDark">#673AB7</item>
-        <item name="colorAccent">#FF4081</item>
-    </style>
-    <style name="Theme.Login" parent="AppTheme">
-        <item name="colorPrimary">#63B931</item>
-        <item name="colorPrimaryDark">#63B931</item>
+        <item name="colorAccent">#63B931</item>
     </style>
 
     <style name="Widget.CardContent" parent="android:Widget">
@@ -33,6 +29,11 @@
         <item name="android:paddingTop">24dp</item>
         <item name="android:paddingBottom">24dp</item>
         <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="TextOverCount" parent="Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 </resources>

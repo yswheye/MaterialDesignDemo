@@ -54,7 +54,6 @@
             android:name=".ToolbarActivity"/>
         <activity
             android:name=".TextInputActivity"
-            android:theme="@style/Theme.Login"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <meta-data

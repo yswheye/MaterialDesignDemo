@@ -175,6 +175,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_textinput:
                         startActivity(new Intent(MainActivity.this, TextInputActivity.class));
                         break;
+                    case R.id.nav_discussion:
+                        startActivity(new Intent(MainActivity.this, RecycleDetailActivity.class));
+                        break;
                 }
                 return true;
             }

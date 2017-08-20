@@ -55,6 +55,7 @@
         <activity
             android:name=".TextInputActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".RecycleDetailActivity" />
 
         <meta-data
             android:name="PGYER_APPID"

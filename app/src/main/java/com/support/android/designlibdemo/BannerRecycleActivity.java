@@ -17,12 +17,9 @@
 package com.support.android.designlibdemo;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,10 +29,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -43,7 +37,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.support.android.designlibdemo.utils.PaletteUtil;
 import com.support.android.designlibdemo.utils.StatusBarUtils;
 
-public class RecycleDetailActivity extends AppCompatActivity {
+public class BannerRecycleActivity extends AppCompatActivity {
     public static final String EXTRA_NAME = "cheese_name";
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
@@ -55,18 +49,12 @@ public class RecycleDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_detail_layout);
 
-        Intent intent = getIntent();
-        final String cheeseName = intent.getStringExtra(EXTRA_NAME);
-
         toolbar = findViewById(R.id.toolbar);
         StatusBarUtils.setTranslucentImageHeader(this, 0, toolbar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         recyclerView = findViewById(R.id.recyclerview);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        toolbar.setTitle(" ");
-        collapsingToolbarLayout.setTitle(" ");
 
         loadBackdrop();
         initRecyclerView();
@@ -129,12 +117,17 @@ public class RecycleDetailActivity extends AppCompatActivity {
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(RecycleDetailActivity.this).inflate(R.layout.recycler_item_view, parent, false));
+            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(BannerRecycleActivity.this).inflate(R.layout.recycler_item_view, parent, false));
             return holder;
         }
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
+            if (position % 2 == 0) {
+                holder.img.setImageResource(R.drawable.cheese_2);
+            } else {
+                holder.img.setImageResource(R.drawable.cheese_3);
+            }
         }
 
         @Override
@@ -143,10 +136,11 @@ public class RecycleDetailActivity extends AppCompatActivity {
         }
 
         class MyViewHolder extends RecyclerView.ViewHolder {
-
+            ImageView img;
 
             public MyViewHolder(View view) {
                 super(view);
+                img = view.findViewById(R.id.img);
             }
         }
     }

@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, TextInputActivity.class));
                         break;
                     case R.id.nav_discussion:
-                        startActivity(new Intent(MainActivity.this, RecycleDetailActivity.class));
+                        startActivity(new Intent(MainActivity.this, BannerRecycleActivity.class));
                         break;
                 }
                 return true;

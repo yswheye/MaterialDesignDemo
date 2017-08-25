@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.quanqi.pgyer'
 
 ext.appReleaseDate = null
 ext.appVersionCode = 1
@@ -73,6 +74,17 @@ android {
     lintOptions {
         abortOnError false
         disable 'InvalidPackage'
+    }
+}
+
+pgyer {
+    _api_key = "9be187885cf7cbff436b9908b5f02117"
+    uKey = "e08490068d4b8f6bb82c57d772205356"
+}
+
+apks {
+    release {
+        sourceFile = file("./build/outputs/apk/app-release.apk")
     }
 }
 

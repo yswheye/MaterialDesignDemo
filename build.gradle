@@ -6,13 +6,17 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
+
+        classpath 'org.quanqi:pgyer:0.1.2'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+
         maven { url 'https://maven.google.com' }
+
         maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
     }
 }

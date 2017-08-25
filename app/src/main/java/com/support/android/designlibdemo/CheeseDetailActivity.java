@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -104,7 +105,11 @@ public class CheeseDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void changeUI(int color) {
+    /**
+     *
+     * @param color
+     */
+    private void changeUI(@ColorInt int color) {
         collapsingToolbarLayout.setContentScrimColor(PaletteUtil.colorBurn(color));
         collapsingToolbarLayout.setStatusBarScrimColor(PaletteUtil.colorBurn(color));
         floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(PaletteUtil.colorBurn(color)));

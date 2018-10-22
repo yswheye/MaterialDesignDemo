@@ -72,7 +72,7 @@ public class CheeseDetailActivity extends AppCompatActivity {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                 imageView.setImageBitmap(resource);
-                colorChange(resource);
+//                colorChange(resource);
             }
         });
     }

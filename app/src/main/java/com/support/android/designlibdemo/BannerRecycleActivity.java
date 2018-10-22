@@ -56,6 +56,9 @@ public class BannerRecycleActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+//        toolbar.setTitle("");
+        collapsingToolbarLayout.setTitle(" ");
+
         loadBackdrop();
         initRecyclerView();
     }

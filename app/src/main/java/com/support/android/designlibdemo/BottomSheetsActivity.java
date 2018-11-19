@@ -66,7 +66,7 @@ public class BottomSheetsActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initBottomSheetDialog() {
-        BottomSheetDialog dialog = new BottomSheetDialog(this);
+        BottomSheetDialog dialog = new MyBottomSheetDialog(this);
         View view = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
         dialog.setContentView(view);
         dialog.getWindow().setDimAmount(0f);//去除遮罩

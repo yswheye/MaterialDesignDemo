@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2015 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,15 +15,15 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.support.android.designlibdemo">
+    package="com.support.android.designlibdemo">
 
     <!-- pgy 必选-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> <!-- 获取网络状态 -->
-    <uses-permission android:name="android.permission.INTERNET"/> <!-- 网络通信-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>  <!-- 获取设备信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> <!-- 获取MAC地址-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- 读写sdcard，storage等等 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- 读写sdcard，storage等等 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  <!-- 获取设备信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
 
     <application
         android:name=".MyApplication"
@@ -35,10 +34,10 @@
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -47,20 +46,21 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
         <activity
-            android:name=".ToolbarActivity"/>
+            android:name=".BottomSheetsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ToolbarActivity" />
         <activity
             android:name=".TextInputActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".BannerRecycleActivity" />
 
         <meta-data
             android:name="PGYER_APPID"
-            android:value="12d14be9b232762f0d0021345356a207">
-        </meta-data>
+            android:value="12d14be9b232762f0d0021345356a207"></meta-data>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.materialdemo.authority.fileprovider"
@@ -68,7 +68,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
     </application>

@@ -36,6 +36,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.pgyersdk.update.PgyUpdateManager;
 import com.support.android.designlibdemo.utils.PermissionUtil;
@@ -79,7 +80,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("撤销", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(MainActivity.this, "撤销操作", Toast.LENGTH_SHORT).show();
+                            }
+                        }).show();
             }
         });
 
@@ -177,6 +183,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_discussion:
                         startActivity(new Intent(MainActivity.this, BannerRecycleActivity.class));
+                        break;
+                    case R.id.BottomSheets:
+                        startActivity(new Intent(MainActivity.this, BottomSheetsActivity.class));
                         break;
                 }
                 return true;

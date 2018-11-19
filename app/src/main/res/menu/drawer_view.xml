@@ -35,14 +35,20 @@
             android:title="Discussion" />
     </group>
 
-    <item android:title="Sub items">
+    <item android:title="Bottom Sheets">
         <menu>
             <item
+                android:id="@+id/BottomSheets"
                 android:icon="@drawable/ic_dashboard"
-                android:title="Sub item 1" />
+                android:title="BottomSheets" />
             <item
-                android:icon="@drawable/ic_forum"
-                android:title="Sub item 2" />
+                android:id="@+id/BottomSheetDialog"
+                android:icon="@drawable/ic_dashboard"
+                android:title="BottomSheetDialog" />
+            <item
+                android:id="@+id/BottomSheetDialogFragment"
+                android:icon="@drawable/ic_dashboard"
+                android:title="BottomSheetDialogFragment" />
         </menu>
     </item>
 
